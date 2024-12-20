@@ -4,10 +4,9 @@ from pyspark.sql.types import TimestampType, IntegerType
 
 # Створюємо сесію Spark
 spark = SparkSession.builder.appName("MyGoitSparkSandbox").getOrCreate()
-spark.conf.set("spark.sql.stackTracesInDataFrameContext", "true")
 
 # Завантажуємо датасет
-nuek_df = spark.read.csv('./nuek-vuh3.csv', header=True)
+nuek_df = spark.read.csv('./topic3/nuek-vuh3.csv', header=True)
 
 # Створюємо тимчасове представлення для виконання SQL-запитів
 nuek_df.createTempView("nuek_view")
